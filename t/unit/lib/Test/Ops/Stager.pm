@@ -1,10 +1,11 @@
 use MooseX::Declare;
 use Method::Signatures::Simple;
 
-class Test::Ops::Stager with (Test::Common, Ops::Stager, Util::Logger) {
+class Test::Ops::Stager with Test::Common extends Ops::Stager {
 
+#### EXTERNAL
 use FindBin qw($Bin);
-use Ops::Main;
+use Test::More;
 
 has 'conf'			=> ( 
 	is => 'rw', 
@@ -23,92 +24,73 @@ method setConf {
 	$self->conf($conf);
 }
 
-method setUp () {
-	#### SET LOG FILE
-	my $logfile			=	"$Bin/outputs/incrementversion.log";
-	$self->logfile($logfile);
-
-	##### CREATE LOCAL REPOSITORY IN inputs DIRECTORY
-	my $inputdir 	= 	"$Bin/inputs";
-	my $repository	=	"testrepo";
-	$self->setUpRepo($inputdir, $repository);
-}
-
-method cleanUp {
-	#### REMOVE inputs REPOSITORY
-	my $inputdir 		= 	"$Bin/inputs";
-	my $repository		=	"testrepo";
-	$self->setUpRepo($inputdir, $repository);
-	`rm -fr $inputdir/$repository`;
-	
-	#### REMOVE outputs REPOSITORY
-	my $outputdir 		= 	"$Bin/outputs";
-	$self->setUpRepo($outputdir, $repository);
-	`rm -fr $outputdir/$repository`;
-}
 
 method testRunStager {
-	# #### SET UP REPO
-	# $self->setUp();
+	#### SET VARIABLES
+	my $mode				=		"1-2";
+	my $version			=		"1.4.0";
+	my $repository	=		"testrepo";
+	my $package			=		"biorepository";
+	my $stagefile		=		"$Bin/inputs/stager.pm";
+	my $branch			=		"master";
+	my $outputdir		=		"$Bin/outputs";
+	my $inputdir 		= 	"$Bin/inputs";
+	my $stager     	= 	"stager";
+	my $message			=		"TEST MULTILINE COMMIT MESSAGE - FIRST LINE
+
+THIRD LINE";
+
+	#### SET UP REPO
+	$self->createSourceRepo( $mode, $inputdir, $repository, $stager, $stagefile );
 
 	#### COPY OPSDIR AFRESH
-	my $inputsdir	= "$Bin/inputs/testrepo";
-	my $outputsdir	= "$Bin/outputs/testrepo";
-	$self->setUpDirs($inputsdir, $outputsdir);
+	$self->setUpDirs($inputdir, $outputdir);
 
-	#### SET LOG FILE
-	my $logfile		=	"$Bin/outputs/runstager.log";
-	$self->logfile($logfile);
+	##### SET SLOTS	
+	$self->version($version);
+	$self->branch($branch);
+	$self->package($package);
+	$self->outputdir($outputdir);
 
-	##### SET ARGUMENTS
-	my $mode		=	"1-2";
-	my $message		=	"TEST MULTILINE COMMIT MESSAGE - FIRST LINE
-<EMPTY LINE>
-<EMPTY LINE>
-SECOND LINE
-THIRD LINE
-";
-	
-	my $version		=	"1.4.0";
-	my $versiontype	=	undef;
-	my $versionformat=	"semver";
-	my $package		=	"biorepository";
-	my $stagefile	=	"$Bin/inputs/stager.pm";
-	my $branch		=	"master";
-	my $outputdir	=	"$outputsdir/tmp";
-	$self->logDebug("stagefile", $stagefile);	
-	
-	my $object = Ops::Main->new({
-		conf					=>	$self->conf(),
-		logfile     	=>   $logfile,
-		log     			=>   $self->log(),
-		printlog   		=>   $self->printlog(),
+	#### RUN
+	my ($sourcerepo, $targetrepo) = $self->stageRepo($stagefile, $mode, $message);	
+ 	$self->logDebug("sourcerepo", $sourcerepo);
+ 	$self->logDebug("targetrepo", $targetrepo);
 
-		version     	=>  $version,
-		versiontype   =>  $versiontype,
-		versionformat =>  $versionformat,
-		branch        =>  $branch,
-		package     	=>  $package,
-		outputdir     =>  $outputdir
-	});
+ 	#### TEST
+ 	my $actual = $targetrepo->currentVersion();
+ 	my $expected = $version;
+ 	$self->logDebug("actual", $actual);
+ 	$self->logDebug("expected", $expected);
+	ok($actual eq $version, "target and source versions match");
 
-	$object->stageRepo($stagefile, $mode, $message);	
-
-	##### CLEAN UP
-	# $self->cleanUp();
+	#### CLEAN UP
+	$self->cleanUp( $inputdir, $repository );
 }
 
-method setUpRepo ($repodir, $repository) {
-	#### CLEAN OUT LOCAL REPO
-	my $sourcedir = "$repodir/$repository";
-	`rm -fr $sourcedir/* $sourcedir/.git` if -d $sourcedir;
-	`mkdir -p $sourcedir` if not -d $sourcedir;
+method createSourceRepo ( $mode, $inputdir, $repository, $stager, $stagefile ) {
+	##### CREATE LOCAL REPOSITORY
+	$self->logDebug("inputdir", $inputdir);
+	$self->logDebug("repository", $repository);
+	$self->logDebug("stager", $stager);
+	$self->logDebug("stagefile", $stagefile);
 
-  #### CHANGE TO REPO DIR 
-  $self->changeToRepo($sourcedir);
-  
+	my $repodir = "$inputdir/$repository";
+	$self->logDebug("repodir", $repodir);
+
+	#### CLEAN OUT LOCAL REPO
+	`rm -fr $repodir/* $repodir/.git` if -d $repodir;
+	`mkdir -p $repodir` if not -d $repodir;
+
+	$self->loadOpsConfig( $inputdir, $stager );
+
+	my ($sourceinfo, $targetinfo) = $self->getRepoInfo( $mode, $stagefile );
+	$self->logDebug("sourceinfo", $sourceinfo);
+	$sourceinfo->{log} = $self->log();
+ 	my $sourcerepo = Ops::Repo->new($sourceinfo);
+
   #### INITIALISE REPO
-  $self->initRepo($sourcedir);
+  $sourcerepo->initRepo();
 
   #### POPULATE REPO WITH FILES AND TAGS    
 	my $versions = [	
@@ -126,25 +108,22 @@ method setUpRepo ($repodir, $repository) {
 	];
 
 	for ( my $i = 0; $i < @$versions; $i++ ) {
-    $self->toFile("$sourcedir/$$versions[$i]", $$versions[$i]);
-    $self->addToRepo($sourcedir);
-    $self->commitToRepo("Version $$versions[$i]");
-    $self->addLocalTag($$versions[$i], "TAG $$versions[$i]");
+    $sourcerepo->printToFile("$repodir/$$versions[$i]", $$versions[$i]);
+    $sourcerepo->addToRepo();
+    $sourcerepo->commitToRepo("Version $$versions[$i]");
+    $sourcerepo->addLocalTag($$versions[$i], "TAG $$versions[$i]");
   }
 }
 
-method cleanUp () {
+method cleanUp ( $inputdir, $repository ) {
 	#### REMOVE inputs REPOSITORY
-	my $inputdir 		= 	"$Bin/inputs";
-	my $repository		=	"testrepo";
-	$self->setUpRepo($inputdir, $repository);
 	`rm -fr $inputdir/$repository`;
 	
 	#### REMOVE outputs REPOSITORY
 	my $outputdir 		= 	"$Bin/outputs";
-	$self->setUpRepo($outputdir, $repository);
 	`rm -fr $outputdir/$repository`;
 }
+
 
 
 }

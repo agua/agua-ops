@@ -1,7 +1,7 @@
 use MooseX::Declare;
 use Method::Signatures::Simple;
 
-class Test::Agua::Ops::S3 with (Test::Agua::Common::Util) extends Agua::Ops {
+class Test::Ops::S3 with (Test::Agua::Common::Util) extends Agua::Ops {
 
 use Data::Dumper;
 use Test::More;

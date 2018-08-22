@@ -1,27 +1,5 @@
 #!/usr/bin/perl -w
 
-# BEGIN {
-#     my $arch = $^O;
-#     if ( $arch eq "darwin" ) {
-#         my $installdir = $ENV{'installdir'} || "/a";
-#         unshift(@INC, "$installdir/extlib/osx/lib/perl5");
-#         unshift(@INC, "$installdir/extlib/osx/lib/perl5/x86_64-linux-gnu-thread-multi/");
-#         unshift(@INC, "$installdir/lib");
-#     }
-#     elsif ( $arch eq "linux" ) {
-#         my $installdir = $ENV{'installdir'} || "/a";
-#         unshift(@INC, "$installdir/extlib/linux/lib/perl5");
-#         unshift(@INC, "$installdir/extlib/linux/lib/perl5/x86_64-linux-gnu-thread-multi/");
-#         unshift(@INC, "$installdir/lib");
-#     }
-#     elsif ( $arch eq "MSWin32" ) {
-#         my $installdir = $ENV{'installdir'} || "/a";
-#         unshift(@INC, "$installdir/extlib/win/lib/perl5");
-#         unshift(@INC, "$installdir/extlib/win/lib/perl5/MSWin32-x86-multi-thread-64int/");
-#         unshift(@INC, "$installdir/lib");
-#     }
-# }
-
 use strict;
 
 =head2
@@ -65,19 +43,19 @@ $| = 1;
 
 #### USE LIB
 use FindBin qw($Bin);
-use lib "$Bin/../../lib";
+use lib "$Bin/../..";
 
 #### EXTERNAL MODULES
 use Getopt::Long;
 
 #### INTERNAL MODULES
-use Ops::Main;
+use Ops::Stager;
 
 #### GET OPTIONS
 my $branch          =   "master";
-my $versionformat  =   "semver";
+my $versionformat   =   "semver";
 my $logfile 		= 	"/tmp/stager.log";
-my $log     	=   2;
+my $log     	    =   2;
 my $printlog    	=   5;
 my $stagefile;
 my $mode;
@@ -92,6 +70,7 @@ my $help;
 GetOptions (
 
 	#### REQUIRED
+    'package=s'         =>  \$package,
     'mode=s'            =>  \$mode,
     'stagefile=s'       =>  \$stagefile,
     'message=s'     	=>  \$message,
@@ -101,7 +80,7 @@ GetOptions (
     'versiontype=s'     =>  \$versiontype,
 
 	#### DEBUG
-    'log=s'         =>  \$log,
+    'log=s'             =>  \$log,
     'printlog=s'        =>  \$printlog,
 
 	#### OPTIONAL
@@ -125,7 +104,7 @@ print "version.pl    versiontype must be 'major'O, 'minor', 'patch' or 'build'\n
 print "version.pl    releasename must be 'alpha', 'beta', or 'rc'\n" and exit if defined $releasename and not $releasename =~ /^(alpha|beta|rc)$/;
 
 
-my $object = Ops::Main->new({
+my $object = Ops::Stager->new({
     version     	=>  $version,
     versiontype     =>  $versiontype,
     versionfile     =>  $versionfile,
@@ -136,7 +115,7 @@ my $object = Ops::Main->new({
     outputdir       =>  $outputdir,
     releasename     =>  $releasename,
     logfile     	=>   $logfile,
-    log			=>	$log,
+    log			    =>	$log,
     printlog   		=>   $printlog
 });
 $object->stageRepo($stagefile, $mode, $message);

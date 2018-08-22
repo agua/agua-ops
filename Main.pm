@@ -21,7 +21,6 @@ class Ops::Main with (Util::Logger,
 	Ops::Nfs,
 	Ops::Sge,
   Ops::Ssh,
-	Ops::Stager,
 	Ops::Version,
 	
 	Package::Main) {

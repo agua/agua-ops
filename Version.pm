@@ -440,7 +440,8 @@ method incrementVersion ($versionformat, $versiontype, $repodir, $versionfile, $
     $self->logDebug("versiontype", $versiontype);
 	#### GET CURRENT VERSION
 	my $currentversion = $self->getCurrentVersion($repodir, $branch);
-	$self->logCritical("No current version found") and exit if not defined $currentversion or not $currentversion;
+	$currentversion = "0.0.1" if not defined $currentversion or $currentversion eq "";
+	# $self->logCritical("No current version found") and exit if not defined $currentversion or not $currentversion;
 
 	#### INCREMENT VERSION	
 	my $finalversion;
@@ -669,7 +670,6 @@ method createVersionDir ($repodir, $package, $version) {
 	print "Can't create versiondir: $versiondir\n"
     and exit if not -d $versiondir;
 }
-
 
 
 
