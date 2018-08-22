@@ -1,0 +1,270 @@
+1..1
+ok 1 - An object of class 'Test::Ops::Stager' isa 'Test::Ops::Stager'
+2018-08-21 16:31:19    [CALLER]   	Test::Common::setUpDirs	46	caller: Test::Ops::Stager::testRunStager	47	
+2018-08-21 16:31:19    [DEBUG]   	Test::Ops::Stager::testRunStager	82	stagefile: /mnt/repos/agua/flow/lib/Ops/t/unit/bin/Ops/Stager/inputs/stager.pm
+2018-08-21 16:31:19    [DEBUG]   	Ops::Main::initialise	153	
+2018-08-21 16:31:19    [DEBUG]   	Ops::Main::setSsh	237	username: undef
+2018-08-21 16:31:19    [DEBUG]   	Ops::Main::setSsh	238	hostname: undef
+2018-08-21 16:31:19    [DEBUG]   	Ops::Main::setSsh	239	keyfile: 
+2018-08-21 16:31:19    [DEBUG]   	Table::Common::setDbh	32	logfile: 
+2018-08-21 16:31:19    [DEBUG]   	Table::Common::setDbh	40	Doing dbfile
+2018-08-21 16:31:20    [DEBUG]   	DBase::SQLite::initialise	44	dbfile: /f/db/agua.sqlite
+2018-08-21 16:31:20    [DEBUG]   	DBase::SQLite::initialise	56	dbh: bless( {}, "DBI::db" )
+2018-08-21 16:31:20    [DEBUG]   	Ops::Stager::stageRepo	72	stagefile: /mnt/repos/agua/flow/lib/Ops/t/unit/bin/Ops/Stager/inputs/stager.pm
+2018-08-21 16:31:20    [DEBUG]   	Ops::Stager::stageRepo	73	mode: 1-2
+2018-08-21 16:31:20    [DEBUG]   	Ops::Stager::stageRepo	74	message: TEST MULTILINE COMMIT MESSAGE - FIRST LINE
+<EMPTY LINE>
+<EMPTY LINE>
+SECOND LINE
+THIRD LINE
+
+2018-08-21 16:31:20    [DEBUG]   	Ops::Stager::stageRepo	77	DOING setUpStager
+2018-08-21 16:31:20    [DEBUG]   	Ops::Stager::setUpStager	98	opsdir: /mnt/repos/agua/flow/lib/Ops/t/unit/bin/Ops/Stager/inputs
+2018-08-21 16:31:20    [DEBUG]   	Ops::Stager::setUpStager	99	reponame: stager
+2018-08-21 16:31:20    [DEBUG]   	Ops::Stager::setUpStager	102	self->opsmodloaded(): 0
+2018-08-21 16:31:20    [DEBUG]   	Ops::Install::loadOpsModule	1199	opsdir: /mnt/repos/agua/flow/lib/Ops/t/unit/bin/Ops/Stager/inputs
+2018-08-21 16:31:20    [DEBUG]   	Ops::Install::loadOpsModule	1200	repository: stager
+2018-08-21 16:31:20    [DEBUG]   	Ops::Install::loadOpsModule	1212	Found modulefile: /mnt/repos/agua/flow/lib/Ops/t/unit/bin/Ops/Stager/inputs/stager.pm
+2018-08-21 16:31:20    [DEBUG]   	Ops::Install::loadOpsModule	1216	olddir: /mnt/repos/agua/flow/lib/Ops/t/unit/bin/Ops/Stager
+2018-08-21 16:31:20    [DEBUG]   	Ops::Install::loadOpsInfo	1231	opsdir: /mnt/repos/agua/flow/lib/Ops/t/unit/bin/Ops/Stager/inputs
+2018-08-21 16:31:20    [DEBUG]   	Ops::Install::loadOpsInfo	1232	package: stager
+2018-08-21 16:31:20    [DEBUG]   	Ops::Install::loadOpsInfo	1239	package: stager
+2018-08-21 16:31:20    [DEBUG]   	Ops::Install::loadOpsInfo	1242	opsfile: /mnt/repos/agua/flow/lib/Ops/t/unit/bin/Ops/Stager/inputs/stager.ops
+2018-08-21 16:31:20    [DEBUG]   	Ops::Install::loadOpsInfo	1272	Can't find opsfile: /mnt/repos/agua/flow/lib/Ops/t/unit/bin/Ops/Stager/inputs/stager.ops
+Opsfile not found: /mnt/repos/agua/flow/lib/Ops/t/unit/bin/Ops/Stager/inputs/stager.ops
+2018-08-21 16:31:20    [DEBUG]   	Ops::Stager::loadOpsConfig	116	opsdir: /mnt/repos/agua/flow/lib/Ops/t/unit/bin/Ops/Stager/inputs
+2018-08-21 16:31:20    [DEBUG]   	Ops::Stager::loadOpsConfig	117	package: stager
+2018-08-21 16:31:20    [DEBUG]   	Ops::Stager::loadOpsConfig	119	configfile: /mnt/repos/agua/flow/lib/Ops/t/unit/bin/Ops/Stager/inputs/stager.yml
+2018-08-21 16:31:20    [DEBUG]   	Ops::Stager::loadOpsConfig	127	stageconf: bless( {"memorystore":undef,"printlog":4,"outputfile":"/mnt/repos/agua/flow/lib/Ops/t/unit/bin/Ops/Stager/inputs/stager.yml","logtype":"cli","oldlog":2,"inputfile":"/mnt/repos/agua/flow/lib/Ops/t/unit/bin/Ops/Stager/inputs/stager.yml","valueoffset":24,"log":4,"indent":4,"yaml":bless( [], "YAML::Tiny" ),"memory":0,"oldprintlog":2,"backup":1,"logfile":""}, "Conf::Yaml" )
+2018-08-21 16:31:20    [DEBUG]   	Ops::Stager::stageRepo	86	DOING runStager(1-2, TEST MULTILINE COMMIT MESSAGE - FIRST LINE
+<EMPTY LINE>
+<EMPTY LINE>
+SECOND LINE
+THIRD LINE
+)
+2018-08-21 16:31:20    [DEBUG]   	Ops::Stager::runStager	209	mode: 1-2
+2018-08-21 16:31:20    [DEBUG]   	Ops::Stager::runStager	210	message: TEST MULTILINE COMMIT MESSAGE - FIRST LINE
+<EMPTY LINE>
+<EMPTY LINE>
+SECOND LINE
+THIRD LINE
+
+2018-08-21 16:31:20    [DEBUG]   	Ops::Stager::setRepoLocations	146	mode: 1-2
+2018-08-21 16:31:20    [DEBUG]   	Ops::Stager::setRepoLocations	149	source: 1
+2018-08-21 16:31:20    [DEBUG]   	Ops::Stager::setRepoLocations	150	target: 2
+2018-08-21 16:31:20    [DEBUG]   	Ops::Stager::setRepoLocations	156	sourcerepo: testrepo
+2018-08-21 16:31:20    [DEBUG]   	Ops::Stager::setRepoLocations	157	targetrepo: testrepo-public
+2018-08-21 16:31:20    [DEBUG]   	Ops::Stager::setRepoLocations	158	sourcebranch: master
+2018-08-21 16:31:20    [DEBUG]   	Ops::Stager::setRepoLocations	159	targetbranch: dev
+2018-08-21 16:31:20    [DEBUG]   	Ops::Stager::runStager	223	basedir: /mnt/repos/agua/flow/lib/Ops/t/unit/bin/Ops/Stager/inputs
+2018-08-21 16:31:20    [DEBUG]   	Ops::Stager::runStager	224	mode: 1-2
+2018-08-21 16:31:20    [DEBUG]   	Ops::Stager::runStager	225	stagefile: /mnt/repos/agua/flow/lib/Ops/t/unit/bin/Ops/Stager/inputs/stager.pm
+2018-08-21 16:31:20    [DEBUG]   	Ops::Stager::runStager	226	message: TEST MULTILINE COMMIT MESSAGE - FIRST LINE
+<EMPTY LINE>
+<EMPTY LINE>
+SECOND LINE
+THIRD LINE
+
+2018-08-21 16:31:20    [DEBUG]   	Ops::Git::checkoutBranch	173	repodir: testrepo
+2018-08-21 16:31:20    [DEBUG]   	Ops::Git::checkoutBranch	174	branch: master
+2018-08-21 16:31:20    [DEBUG]   	Ops::Git::checkoutBranch	178	pwd: /mnt/repos/agua/flow/lib/Ops/t/unit/bin/Ops/Stager/inputs
+2018-08-21 16:31:20    [DEBUG]   	Ops::Git::changeToRepo	36	directory: testrepo
+2018-08-21 16:31:20    [DEBUG]   	Ops::Main::changeDir	276	directory: testrepo
+2018-08-21 16:31:20    [DEBUG]   	Ops::Main::changeDir	279	pwd: /mnt/repos/agua/flow/lib/Ops/t/unit/bin/Ops/Stager/inputs
+
+2018-08-21 16:31:20    [DEBUG]   	Ops::Main::changeDir	282	cwd: undef
+2018-08-21 16:31:20    [DEBUG]   	Ops::Git::changeToRepo	40	result: 1
+2018-08-21 16:31:20    [DEBUG]   	Ops::Git::checkoutBranch	185	command: git checkout master
+2018-08-21 16:31:20    [DEBUG]   	Ops::Stager::getPwd	506	Returning pwd: /mnt/repos/agua/flow/lib/Ops/t/unit/bin/Ops/Stager/inputs/testrepo
+2018-08-21 16:31:20    [DEBUG]   	Ops::Main::runCommand	308	FIRST pwd: /mnt/repos/agua/flow/lib/Ops/t/unit/bin/Ops/Stager/inputs/testrepo
+2018-08-21 16:31:20    [DEBUG]   	Ops::Main::runCommand	366	LAST pwd: /mnt/repos/agua/flow/lib/Ops/t/unit/bin/Ops/Stager/inputs/testrepo
+2018-08-21 16:31:20    [DEBUG]   	Ops::Git::checkoutBranch	187	output: A	VERSION
+A	testrepo-public/VERSION
+2018-08-21 16:31:20    [DEBUG]   	Ops::Git::checkoutBranch	189	DOING  chdir(/mnt/repos/agua/flow/lib/Ops/t/unit/bin/Ops/Stager/inputs)
+2018-08-21 16:31:20    [DEBUG]   	Ops::Git::checkoutBranch	193	FINAL pwd: /mnt/repos/agua/flow/lib/Ops/t/unit/bin/Ops/Stager/inputs
+
+2018-08-21 16:31:20    [DEBUG]   	Ops::Stager::createVersion	452	repodir: testrepo
+2018-08-21 16:31:20    [DEBUG]   	Ops::Stager::createVersion	453	message: TEST MULTILINE COMMIT MESSAGE - FIRST LINE
+<EMPTY LINE>
+<EMPTY LINE>
+SECOND LINE
+THIRD LINE
+
+2018-08-21 16:31:20    [DEBUG]   	Ops::Stager::createVersion	454	version: 1.4.0
+2018-08-21 16:31:20    [DEBUG]   	Ops::Stager::createVersion	455	versiontype: undef
+2018-08-21 16:31:20    [DEBUG]   	Ops::Stager::createVersion	456	versionfile: VERSION
+2018-08-21 16:31:20    [DEBUG]   	Ops::Stager::createVersion	457	versionformat: semver
+2018-08-21 16:31:20    [DEBUG]   	Ops::Stager::createVersion	458	branch: master
+2018-08-21 16:31:20    [DEBUG]   	Ops::Version::setVersion	313	
+2018-08-21 16:31:20    [DEBUG]   	Ops::Version::setSemVer	362	version: 1.4.0
+2018-08-21 16:31:20    [DEBUG]   	Ops::Version::isSemVer	421	
+2018-08-21 16:31:20    [DEBUG]   	Ops::Version::getCurrentVersion	349	
+2018-08-21 16:31:20    [DEBUG]   	Ops::Git::changeToRepo	36	directory: testrepo
+2018-08-21 16:31:20    [DEBUG]   	Ops::Main::changeDir	276	directory: testrepo
+2018-08-21 16:31:20    [DEBUG]   	Ops::Main::changeDir	279	pwd: /mnt/repos/agua/flow/lib/Ops/t/unit/bin/Ops/Stager/inputs
+
+2018-08-21 16:31:20    [DEBUG]   	Ops::Main::changeDir	282	cwd: 
+2018-08-21 16:31:20    [DEBUG]   	Ops::Git::changeToRepo	40	result: 1
+2018-08-21 16:31:20    [DEBUG]   	Ops::Version::getCurrentVersion	354	command: git describe --abbrev=0 --tag
+2018-08-21 16:31:20    [DEBUG]   	Ops::Stager::getPwd	506	Returning pwd: /mnt/repos/agua/flow/lib/Ops/t/unit/bin/Ops/Stager/inputs/testrepo
+2018-08-21 16:31:20    [DEBUG]   	Ops::Main::runCommand	308	FIRST pwd: /mnt/repos/agua/flow/lib/Ops/t/unit/bin/Ops/Stager/inputs/testrepo
+2018-08-21 16:31:20    [DEBUG]   	Ops::Main::runCommand	366	LAST pwd: /mnt/repos/agua/flow/lib/Ops/t/unit/bin/Ops/Stager/inputs/testrepo
+2018-08-21 16:31:20    [DEBUG]   	Ops::Version::getCurrentVersion	357	Returning current version: 1.3.7+build.11.e0f985a
+2018-08-21 16:31:20    [DEBUG]   	Ops::Version::setSemVer	367	currentversion: 1.3.7+build.11.e0f985a
+2018-08-21 16:31:20    [DEBUG]   	Ops::Version::validateSemVer	401	version1: 1.4.0
+2018-08-21 16:31:20    [DEBUG]   	Ops::Version::validateSemVer	402	version2: 1.3.7+build.11
+2018-08-21 16:31:20    [CALLER]   	Ops::Version::sortVersions	78	caller: Ops::Version::higherSemVer	408	
+2018-08-21 16:31:20    [DEBUG]   	Ops::Version::higherSemVer	294	returning 1
+2018-08-21 16:31:20    [DEBUG]   	Ops::Version::validateSemVer	408	self->higherSemVer(1.4.0, 1.3.7+build.11) : 1
+2018-08-21 16:31:20    [CALLER]   	Ops::Version::sortVersions	78	caller: Ops::Version::higherSemVer	409	
+2018-08-21 16:31:20    [DEBUG]   	Ops::Version::higherSemVer	294	returning 1
+2018-08-21 16:31:20    [CALLER]   	Ops::Version::sortVersions	78	caller: Ops::Version::higherSemVer	412	
+2018-08-21 16:31:20    [DEBUG]   	Ops::Version::higherSemVer	294	returning 1
+2018-08-21 16:31:20    [DEBUG]   	Ops::Version::setSemVer	371	version: 1.4.0
+2018-08-21 16:31:20    [DEBUG]   	Ops::Version::setSemVer	372	error: undef
+2018-08-21 16:31:20    [CALLER]   	Ops::Version::_setVersion	326	caller: Ops::Version::setSemVer	316	
+2018-08-21 16:31:20    [DEBUG]   	Ops::Version::_setVersion	327	repodir: testrepo
+2018-08-21 16:31:20    [DEBUG]   	Ops::Version::_setVersion	328	versionfile: VERSION
+2018-08-21 16:31:20    [DEBUG]   	Ops::Version::_setVersion	329	branch: master
+2018-08-21 16:31:20    [DEBUG]   	Ops::Version::_setVersion	330	version: 1.4.0
+2018-08-21 16:31:20    [DEBUG]   	Ops::Version::_setVersion	331	description: TEST MULTILINE COMMIT MESSAGE - FIRST LINE
+<EMPTY LINE>
+<EMPTY LINE>
+SECOND LINE
+THIRD LINE
+
+2018-08-21 16:31:20    [DEBUG]   	Ops::Stager::printToFile	520	file: VERSION
+2018-08-21 16:31:20    [DEBUG]   	Ops::Stager::createParentDir	533	directory: undef
+2018-08-21 16:31:20    [DEBUG]   	Ops::Stager::getPwd	506	Returning pwd: /mnt/repos/agua/flow/lib/Ops/t/unit/bin/Ops/Stager/inputs/testrepo
+2018-08-21 16:31:20    [DEBUG]   	Ops::Main::runCommand	308	FIRST pwd: /mnt/repos/agua/flow/lib/Ops/t/unit/bin/Ops/Stager/inputs/testrepo
+2018-08-21 16:31:20    [DEBUG]   	Ops::Main::runCommand	366	LAST pwd: /mnt/repos/agua/flow/lib/Ops/t/unit/bin/Ops/Stager/inputs/testrepo
+2018-08-21 16:31:20    [DEBUG]   	Ops::Git::addToRepo	91	result: 
+2018-08-21 16:31:20    [DEBUG]   	Ops::Git::addToRepo	92	error: 
+2018-08-21 16:31:20    [DEBUG]   	Ops::Version::_setVersion	344	Returning (1.4.0, undef)
+2018-08-21 16:31:20    [DEBUG]   	Ops::Version::setVersion	317	result: 1.4.0
+2018-08-21 16:31:20    [DEBUG]   	Ops::Version::setVersion	318	error: undef
+2018-08-21 16:31:20    [DEBUG]   	Ops::Stager::createVersion	463	result: 1.4.0
+2018-08-21 16:31:20    [DEBUG]   	Ops::Stager::createVersion	464	error: undef
+2018-08-21 16:31:20    [DEBUG]   	Ops::Stager::createVersion	466	
+Created new version: 1.4.0
+
+
+version:  1.4.0
+2018-08-21 16:31:20    [DEBUG]   	Ops::Stager::runStager	246	version: 1.4.0
+2018-08-21 16:31:20    [DEBUG]   	Ops::Stager::getPwd	506	Returning pwd: /mnt/repos/agua/flow/lib/Ops/t/unit/bin/Ops/Stager/inputs
+2018-08-21 16:31:20    [DEBUG]   	Ops::Stager::runStager	251	pwd: /mnt/repos/agua/flow/lib/Ops/t/unit/bin/Ops/Stager/inputs
+2018-08-21 16:31:20    [DEBUG]   	Ops::Stager::sourceCommit	411	sourcerepo: testrepo
+2018-08-21 16:31:20    [DEBUG]   	Ops::Stager::commitRepo	419	repodir: testrepo
+2018-08-21 16:31:20    [DEBUG]   	Ops::Stager::commitRepo	423	pwd: /mnt/repos/agua/flow/lib/Ops/t/unit/bin/Ops/Stager/inputs
+2018-08-21 16:31:20    [DEBUG]   	Ops::Stager::commitRepo	427	command: if [ ! -d .git ]; then git init; fi; git add .
+2018-08-21 16:31:20    [DEBUG]   	Ops::Stager::getPwd	506	Returning pwd: /mnt/repos/agua/flow/lib/Ops/t/unit/bin/Ops/Stager/inputs/testrepo
+2018-08-21 16:31:20    [DEBUG]   	Ops::Main::runCommand	308	FIRST pwd: /mnt/repos/agua/flow/lib/Ops/t/unit/bin/Ops/Stager/inputs/testrepo
+2018-08-21 16:31:20    [DEBUG]   	Ops::Main::runCommand	366	LAST pwd: /mnt/repos/agua/flow/lib/Ops/t/unit/bin/Ops/Stager/inputs/testrepo
+2018-08-21 16:31:20    [DEBUG]   	Ops::Stager::commitRepo	431	logfile: /mnt/repos/agua/flow/lib/Ops/t/unit/bin/Ops/Stager/outputs/runstager.log
+2018-08-21 16:31:20    [DEBUG]   	Ops::Stager::commitRepo	433	command: cd testrepo; git commit -a -m "[1.4.0] TEST MULTILINE COMMIT MESSAGE - FIRST LINE
+<EMPTY LINE>
+<EMPTY LINE>
+SECOND LINE
+THIRD LINE
+" --cleanup=verbatim
+2018-08-21 16:31:20    [DEBUG]   	Ops::Stager::getPwd	506	Returning pwd: /mnt/repos/agua/flow/lib/Ops/t/unit/bin/Ops/Stager/inputs/testrepo
+2018-08-21 16:31:20    [DEBUG]   	Ops::Main::runCommand	308	FIRST pwd: /mnt/repos/agua/flow/lib/Ops/t/unit/bin/Ops/Stager/inputs/testrepo
+2018-08-21 16:31:20    [DEBUG]   	Ops::Main::runCommand	366	LAST pwd: /mnt/repos/agua/flow/lib/Ops/t/unit/bin/Ops/Stager/inputs/testrepo
+2018-08-21 16:31:20    [DEBUG]   	Ops::Git::changeToRepo	36	directory: testrepo
+2018-08-21 16:31:20    [DEBUG]   	Ops::Main::changeDir	276	directory: testrepo
+2018-08-21 16:31:20    [DEBUG]   	Ops::Main::changeDir	279	pwd: /mnt/repos/agua/flow/lib/Ops/t/unit/bin/Ops/Stager/inputs/testrepo
+
+2018-08-21 16:31:20    [DEBUG]   	Ops::Main::changeDir	282	cwd: testrepo
+2018-08-21 16:31:20    [DEBUG]   	Ops::Main::changeDir	286	cwd: testrepo/testrepo
+2018-08-21 16:31:20    [DEBUG]   	Ops::Git::changeToRepo	40	result: 0
+2018-08-21 16:31:20    [DEBUG]   	Ops::Git::addLocalTag	108	tag: 1.4.0
+2018-08-21 16:31:20    [DEBUG]   	Ops::Git::addLocalTag	109	description: TEST MULTILINE COMMIT MESSAGE - FIRST LINE
+<EMPTY LINE>
+<EMPTY LINE>
+SECOND LINE
+THIRD LINE
+
+2018-08-21 16:31:20    [DEBUG]   	Ops::Stager::getPwd	506	Returning pwd: /mnt/repos/agua/flow/lib/Ops/t/unit/bin/Ops/Stager/inputs/testrepo
+2018-08-21 16:31:20    [DEBUG]   	Ops::Main::runCommand	308	FIRST pwd: /mnt/repos/agua/flow/lib/Ops/t/unit/bin/Ops/Stager/inputs/testrepo
+2018-08-21 16:31:20    [DEBUG]   	Ops::Main::runCommand	366	LAST pwd: /mnt/repos/agua/flow/lib/Ops/t/unit/bin/Ops/Stager/inputs/testrepo
+2018-08-21 16:31:20    [DEBUG]   	Ops::Git::changeToRepo	36	directory: testrepo
+2018-08-21 16:31:20    [DEBUG]   	Ops::Main::changeDir	276	directory: testrepo
+2018-08-21 16:31:20    [DEBUG]   	Ops::Main::changeDir	279	pwd: /mnt/repos/agua/flow/lib/Ops/t/unit/bin/Ops/Stager/inputs/testrepo
+
+2018-08-21 16:31:20    [DEBUG]   	Ops::Main::changeDir	282	cwd: testrepo
+2018-08-21 16:31:20    [DEBUG]   	Ops::Main::changeDir	286	cwd: testrepo/testrepo
+2018-08-21 16:31:20    [DEBUG]   	Ops::Git::changeToRepo	40	result: 0
+2018-08-21 16:31:20    [DEBUG]   	Ops::Stager::createVersion	452	repodir: testrepo-public
+2018-08-21 16:31:20    [DEBUG]   	Ops::Stager::createVersion	453	message: TEST MULTILINE COMMIT MESSAGE - FIRST LINE
+<EMPTY LINE>
+<EMPTY LINE>
+SECOND LINE
+THIRD LINE
+
+2018-08-21 16:31:20    [DEBUG]   	Ops::Stager::createVersion	454	version: 1.4.0
+2018-08-21 16:31:20    [DEBUG]   	Ops::Stager::createVersion	455	versiontype: undef
+2018-08-21 16:31:20    [DEBUG]   	Ops::Stager::createVersion	456	versionfile: testrepo-public/VERSION
+2018-08-21 16:31:20    [DEBUG]   	Ops::Stager::createVersion	457	versionformat: semver
+2018-08-21 16:31:20    [DEBUG]   	Ops::Stager::createVersion	458	branch: master
+2018-08-21 16:31:20    [DEBUG]   	Ops::Version::setVersion	313	
+2018-08-21 16:31:20    [DEBUG]   	Ops::Version::setSemVer	362	version: 1.4.0
+2018-08-21 16:31:20    [DEBUG]   	Ops::Version::isSemVer	421	
+2018-08-21 16:31:20    [DEBUG]   	Ops::Version::getCurrentVersion	349	
+2018-08-21 16:31:20    [DEBUG]   	Ops::Git::changeToRepo	36	directory: testrepo-public
+2018-08-21 16:31:20    [DEBUG]   	Ops::Main::changeDir	276	directory: testrepo-public
+2018-08-21 16:31:20    [DEBUG]   	Ops::Main::changeDir	279	pwd: /mnt/repos/agua/flow/lib/Ops/t/unit/bin/Ops/Stager/inputs/testrepo
+
+2018-08-21 16:31:20    [DEBUG]   	Ops::Main::changeDir	282	cwd: testrepo
+2018-08-21 16:31:20    [DEBUG]   	Ops::Main::changeDir	286	cwd: testrepo/testrepo-public
+2018-08-21 16:31:20    [DEBUG]   	Ops::Git::changeToRepo	40	result: 0
+2018-08-21 16:31:20    [DEBUG]   	Ops::Version::getCurrentVersion	354	command: git describe --abbrev=0 --tag
+2018-08-21 16:31:20    [DEBUG]   	Ops::Stager::getPwd	506	Returning pwd: /mnt/repos/agua/flow/lib/Ops/t/unit/bin/Ops/Stager/inputs/testrepo
+2018-08-21 16:31:20    [DEBUG]   	Ops::Main::runCommand	308	FIRST pwd: /mnt/repos/agua/flow/lib/Ops/t/unit/bin/Ops/Stager/inputs/testrepo
+2018-08-21 16:31:20    [DEBUG]   	Ops::Main::runCommand	366	LAST pwd: /mnt/repos/agua/flow/lib/Ops/t/unit/bin/Ops/Stager/inputs/testrepo
+2018-08-21 16:31:20    [DEBUG]   	Ops::Version::getCurrentVersion	357	Returning current version: 1.3.7+build.11.e0f985a
+2018-08-21 16:31:20    [DEBUG]   	Ops::Version::setSemVer	367	currentversion: 1.3.7+build.11.e0f985a
+2018-08-21 16:31:20    [DEBUG]   	Ops::Version::validateSemVer	401	version1: 1.4.0
+2018-08-21 16:31:20    [DEBUG]   	Ops::Version::validateSemVer	402	version2: 1.3.7+build.11
+2018-08-21 16:31:20    [CALLER]   	Ops::Version::sortVersions	78	caller: Ops::Version::higherSemVer	408	
+2018-08-21 16:31:20    [DEBUG]   	Ops::Version::higherSemVer	294	returning 1
+2018-08-21 16:31:20    [DEBUG]   	Ops::Version::validateSemVer	408	self->higherSemVer(1.4.0, 1.3.7+build.11) : 1
+2018-08-21 16:31:20    [CALLER]   	Ops::Version::sortVersions	78	caller: Ops::Version::higherSemVer	409	
+2018-08-21 16:31:20    [DEBUG]   	Ops::Version::higherSemVer	294	returning 1
+2018-08-21 16:31:20    [CALLER]   	Ops::Version::sortVersions	78	caller: Ops::Version::higherSemVer	412	
+2018-08-21 16:31:20    [DEBUG]   	Ops::Version::higherSemVer	294	returning 1
+2018-08-21 16:31:20    [DEBUG]   	Ops::Version::setSemVer	371	version: 1.4.0
+2018-08-21 16:31:20    [DEBUG]   	Ops::Version::setSemVer	372	error: undef
+2018-08-21 16:31:20    [CALLER]   	Ops::Version::_setVersion	326	caller: Ops::Version::setSemVer	316	
+2018-08-21 16:31:20    [DEBUG]   	Ops::Version::_setVersion	327	repodir: testrepo-public
+2018-08-21 16:31:20    [DEBUG]   	Ops::Version::_setVersion	328	versionfile: testrepo-public/VERSION
+2018-08-21 16:31:20    [DEBUG]   	Ops::Version::_setVersion	329	branch: master
+2018-08-21 16:31:20    [DEBUG]   	Ops::Version::_setVersion	330	version: 1.4.0
+2018-08-21 16:31:20    [DEBUG]   	Ops::Version::_setVersion	331	description: TEST MULTILINE COMMIT MESSAGE - FIRST LINE
+<EMPTY LINE>
+<EMPTY LINE>
+SECOND LINE
+THIRD LINE
+
+2018-08-21 16:31:20    [DEBUG]   	Ops::Stager::printToFile	520	file: testrepo-public/VERSION
+2018-08-21 16:31:20    [DEBUG]   	Ops::Stager::createParentDir	533	directory: testrepo-public
+2018-08-21 16:31:20    [DEBUG]   	Ops::Stager::getPwd	506	Returning pwd: /mnt/repos/agua/flow/lib/Ops/t/unit/bin/Ops/Stager/inputs/testrepo
+2018-08-21 16:31:20    [DEBUG]   	Ops::Main::runCommand	308	FIRST pwd: /mnt/repos/agua/flow/lib/Ops/t/unit/bin/Ops/Stager/inputs/testrepo
+2018-08-21 16:31:20    [DEBUG]   	Ops::Main::runCommand	366	LAST pwd: /mnt/repos/agua/flow/lib/Ops/t/unit/bin/Ops/Stager/inputs/testrepo
+2018-08-21 16:31:20    [DEBUG]   	Ops::Git::addToRepo	91	result: 
+2018-08-21 16:31:20    [DEBUG]   	Ops::Git::addToRepo	92	error: 
+2018-08-21 16:31:20    [DEBUG]   	Ops::Version::_setVersion	344	Returning (1.4.0, undef)
+2018-08-21 16:31:20    [DEBUG]   	Ops::Version::setVersion	317	result: 1.4.0
+2018-08-21 16:31:20    [DEBUG]   	Ops::Version::setVersion	318	error: undef
+2018-08-21 16:31:20    [DEBUG]   	Ops::Stager::createVersion	463	result: 1.4.0
+2018-08-21 16:31:20    [DEBUG]   	Ops::Stager::createVersion	464	error: undef
+2018-08-21 16:31:20    [DEBUG]   	Ops::Stager::createVersion	466	
+Created new version: 1.4.0
+
+
+2018-08-21 16:31:20    [DEBUG]   	Ops::Stager::getPwd	506	Returning pwd: /mnt/repos/agua/flow/lib/Ops/t/unit/bin/Ops/Stager/inputs
+2018-08-21 16:31:20    [DEBUG]   	Ops::Stager::runStager	267	pwd: /mnt/repos/agua/flow/lib/Ops/t/unit/bin/Ops/Stager/inputs
+2018-08-21 16:31:20    [DEBUG]   	Ops::Stager::sourceToTarget	478	
+2018-08-21 16:31:20    [DEBUG]   	Ops::Git::checkoutBranch	173	repodir: testrepo-public
+2018-08-21 16:31:20    [DEBUG]   	Ops::Git::checkoutBranch	174	branch: master
+2018-08-21 16:31:20    [DEBUG]   	Ops::Git::checkoutBranch	178	pwd: /mnt/repos/agua/flow/lib/Ops/t/unit/bin/Ops/Stager/inputs
+2018-08-21 16:31:20	[ERROR]   	Ops::Git::checkoutBranch	181	Can't find gitdir: testrepo-public/.git

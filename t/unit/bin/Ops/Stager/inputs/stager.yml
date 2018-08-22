@@ -1,0 +1,10 @@
+defaults:
+  package:     testrepo
+  outputdir:   /tmp
+stage:
+  1:
+    repodir:     testrepo
+    branch:      master
+  2:
+    repodir:     testrepo-public
+    branch:      dev
