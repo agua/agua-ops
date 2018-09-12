@@ -266,9 +266,8 @@ method runStager ( $stagefile, $mode, $message ) {
 	#### RUN pre-METHOD IF PRESENT IN *.pm MODULE FILE
 	$self->preSourceToTarget($mode, $sourcerepo, $version, $message) if $self->can('preSourceToTarget');
 
-	##### EXPORT SOURCE TO TARGET
+	##### COPY SOURCE TO TARGET
 	$self->sourceToTarget($sourcerepo, $targetrepo);
-
 
 	#### RUN pre-METHOD IF PRESENT IN *.pm MODULE FILE
 	$self->preTargetCommit($mode, $targetrepo, $package) if $self->can('preTargetCommit');	
